@@ -9,5 +9,24 @@ public class BancoDados {
     static public void cadastrar(Usuario user) {
         usuarios.add(user);
     }
+    static public boolean validarNovaConta(String cpf) {
+
+        if (usuarios.isEmpty()) {
+            return true;
+        } else {
+            for (Usuario usuario : usuarios) {
+                if (cpf.equals(usuario.cpf)) {
+
+                    System.out.println("Usuario invalido!");
+                    for (int i = 0; i < 29; i++) {
+                        System.out.println("=");
+                    }
+
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }

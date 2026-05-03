@@ -156,16 +156,26 @@ public class Main{
             int OpComando = loginPage();
 
             if (OpComando == 1) {
+                boolean validacaoDeDados = false;
+                String nomeCompleto = "";
+                String cpf = "";
+                String numero = "";
+                String email = "";
+                String senha = "";
+                
+                while (!validacaoDeDados) {
+                    nomeCompleto = nome();
 
-                String nomeCompleto = nome();
+                    cpf = cpf();
 
-                String cpf = cpf();
+                    numero = number();
 
-                String numero = number();
+                    email = email();
 
-                String email = email();
-
-                String senha = senha();
+                    senha = senha();
+                    
+                    validacaoDeDados = BancoDados.validarNovaConta(cpf);
+                }
 
                 var conta = CriadorDeContas.criarConta();
                 var digito = CriadorDeContas.criarDigito();
