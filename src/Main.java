@@ -3,6 +3,19 @@ import Usuario.Usuario;
 import java.util.Scanner;
 
 public class Main{
+
+    static void cabecalho() {
+        for (int i = 0; i < 29; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+        System.out.println("        Banco Leais");
+        for (int i = 0; i < 29; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
         ValidadorDeFormatos validador = new ValidadorDeFormatos();
