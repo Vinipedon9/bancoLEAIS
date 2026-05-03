@@ -129,6 +129,22 @@ public class Main{
         }
         return senha;
     }
+    static void exibirDados(Usuario user) {
+
+        for (int i = 0; i < 29; i++) {
+            System.out.print("=");
+        }
+        System.out.println();
+
+        System.out.print("Conta: "+ user.conta);
+        System.out.println();
+
+        for (int i = 0; i < 29; i++) {
+            System.out.print("=");
+        }
+        System.out.println();
+
+    }
 
     public static void main(String[] args) {
 
@@ -156,6 +172,9 @@ public class Main{
 
                 Usuario user = new Usuario(nomeCompleto, cpf, numero, email, senha);
                 user.getConta(conta, digito);
+
+                exibirDados(user);
+
                 BancoDados.cadastrar(user);
             }
             else if (OpComando == 5) {
