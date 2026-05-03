@@ -16,6 +16,21 @@ public class Main{
         }
         System.out.println();
     }
+    static int loginPage() {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("1. Criar conta");
+        System.out.println("5. Fechar sistema");
+        System.out.print(">>> ");
+        var OpComando = Integer.parseInt(leia.nextLine());
+
+        for (int i = 0; i < 29; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+
+        return OpComando;
+    }
 
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
@@ -25,17 +40,8 @@ public class Main{
 
         //Entrada do sistema
         while (true) {
-            int OpComando;
 
-            System.out.println("1. Criar conta");
-            System.out.println("5. Fechar sistema");
-            System.out.print(">>> ");
-            OpComando = Integer.parseInt(leia.nextLine());
-
-            for (int i = 0; i < 29; i++) {
-                System.out.print("-");
-            }
-            System.out.println();
+            int OpComando = loginPage();
 
             if (OpComando == 1) {
                 String nomeCompleto;
