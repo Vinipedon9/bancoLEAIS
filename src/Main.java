@@ -2,6 +2,7 @@ import ListaUsuarios.BancoDados;
 import Usuario.Usuario;
 import java.util.Scanner;
 
+
 public class Main{
 
     static void cabecalho() {
@@ -20,15 +21,7 @@ public class Main{
         Scanner leia = new Scanner(System.in);
         ValidadorDeFormatos validador = new ValidadorDeFormatos();
 
-        for (int i = 0; i < 29; i++) {
-            System.out.print("-");
-        }
-        System.out.println();
-        System.out.println("        Banco Leais");
-        for (int i = 0; i < 29; i++) {
-            System.out.print("-");
-        }
-        System.out.println();
+        cabecalho();
 
         //Entrada do sistema
         while (true) {
