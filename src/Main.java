@@ -31,7 +31,7 @@ public class Main{
 
         return OpComando;
     }
-    //Metodos de criação de usuario.
+
     static String nome() {
         Scanner leia = new Scanner(System.in);
 
