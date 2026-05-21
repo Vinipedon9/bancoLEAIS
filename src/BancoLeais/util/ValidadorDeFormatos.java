@@ -1,6 +1,6 @@
+package BancoLeais.util;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class ValidadorDeFormatos {
 
@@ -32,12 +32,10 @@ public class ValidadorDeFormatos {
                     return false;
                 }
             }
-
-            if (i == 14) {
-                if (numerosDoCpf.size() == 9 || numerosDoCpf.size() > 12) {
-                    return false;
-                }
+            if (numerosDoCpf.size() == 9 || numerosDoCpf.size() > 12) {
+                return false;
             }
+
 
             if (!caractere.equals(".") && !caractere.equals("-")) {
                 numerosDoCpf.add(caractere);

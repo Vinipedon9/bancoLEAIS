@@ -1,6 +1,6 @@
-package ListaUsuarios;
-import Usuario.Usuario;
+package BancoLeais.repository;
 
+import BancoLeais.model.Usuario;
 import java.util.ArrayList;
 
 public class BancoDados {
@@ -9,6 +9,7 @@ public class BancoDados {
     static public void cadastrar(Usuario user) {
         usuarios.add(user);
     }
+
     static public boolean validarNovaConta(String cpf) {
 
         if (usuarios.isEmpty()) {

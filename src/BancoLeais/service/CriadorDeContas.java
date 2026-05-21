@@ -1,3 +1,5 @@
+package BancoLeais.service;
+
 import java.util.Random;
 
 public class CriadorDeContas {
