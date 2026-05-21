@@ -1,57 +1,52 @@
 package BancoLeais.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ValidadorDeFormatos {
 
 
     public boolean validarCPF(String cpf){
-        ArrayList<String> numerosDoCpf = new ArrayList<>();
-        ArrayList<String> pontos = new ArrayList<>();
-        int traco = 0;
 
-        if (cpf.length() < 13 || cpf.length() > 14) {
+        ArrayList<String> numeros = new ArrayList<>(List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"));
+
+
+        if (cpf.length() < 13 || cpf.length() > 14){
             return false;
         }
 
         for (int i = 0; i < cpf.length(); i++) {
-            String caractere = String.valueOf(cpf.charAt(i));
-
-            if (i == 4) {
-                if (numerosDoCpf.size() != 3 || pontos.size() != 1) {
+            var caractere = String.valueOf(cpf.charAt(i));
+            if (i == 0 || i == 1 || i == 2 || i == 4 || i == 5 || i == 6 || i == 8 || i == 9 || i == 10 || i == 12){
+                if (!numeros.contains(caractere)){
                     return false;
                 }
             }
-            if (i == 8) {
-                if (numerosDoCpf.size() != 6 || pontos.size() != 2) {
+
+            if (i == 3 || i == 7){
+                if (!caractere.equals(".")){
+                    System.out.println("Não ha um ponto");
                     return false;
                 }
             }
-            if (i == 12) {
-                if (numerosDoCpf.size() != 9 || pontos.size() != 2 || traco != 1) {
+
+            if (i == 11){
+                if (!caractere.equals("-")){
                     return false;
                 }
             }
-            if (numerosDoCpf.size() == 9 || numerosDoCpf.size() > 12) {
-                return false;
-            }
 
-
-            if (!caractere.equals(".") && !caractere.equals("-")) {
-                numerosDoCpf.add(caractere);
+            if (cpf.length() > 13) {
+                if (i == 13){
+                   if (!numeros.contains(caractere)){
+                        return false;
+                   }
+                }
             }
-            if (caractere.equals(".")) {
-                pontos.add(caractere);
-            }
-            if (caractere.equals("-")) {
-                traco = 1;
-            }
-
-
         }
-
         return true;
     }
+
     public boolean validarCelular(String numero){
         ArrayList<String> numeros = new ArrayList<>();
         ArrayList<String> ddd = new ArrayList<>();
@@ -90,17 +85,19 @@ public class ValidadorDeFormatos {
         }
         return true;
     }
+
     public boolean validarEmail(String email) {
         char primeiroCaractere = email.charAt(0);
         if (primeiroCaractere == '@') {
             return false;
         }
-        if (email.contains("@") == false) {
+        if (!email.contains("@")) {
             return false;
         }
 
         return true;
     }
+
     public boolean validarSenha(String senha) {
 
         String maiusculas = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
