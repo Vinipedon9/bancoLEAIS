@@ -18,6 +18,7 @@ public class GUI {
     }
 
     public static int menu() {
+        System.out.println();
         System.out.println("1. Criar conta");
         System.out.println("5. Fechar sistema");
         System.out.print(">>> ");
