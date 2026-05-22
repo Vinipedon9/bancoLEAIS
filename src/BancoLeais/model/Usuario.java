@@ -1,12 +1,10 @@
-package Usuario;
-import java.util.Random;
+package BancoLeais.model;
 
 public class Usuario {
     public String nome;
     public String cpf;
     public String celular;
     public String email;
-    public String conta;
     public String senha;
 
     public Usuario (String nomeC,String cpfC, String numeroDeContatoC, String emailC, String senhaC){
@@ -17,9 +15,4 @@ public class Usuario {
         senha = senhaC;
     }
 
-    public void getConta(String contaParametro, String digitoParametro) {
-        conta = contaParametro;
-
-        conta = conta + "-" + digitoParametro;
-    }
 }
