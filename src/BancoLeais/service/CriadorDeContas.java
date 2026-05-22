@@ -35,9 +35,16 @@ public class CriadorDeContas {
             System.out.print(">>> ");
             escolhaDeSaldo = leia.nextLine().toLowerCase();
         }
+        double saldo;
         if (escolhaDeSaldo.equals("n")){
-            var saldo = 0;
+            saldo = 0;
         }
-        return null;
+        else {
+            System.out.print("Digite o valor de abertura: ");
+            saldo = Double.parseDouble(leia.nextLine());
+        }
+
+
+        return new Conta(numeroDaConta, saldo, user);
     }
 }

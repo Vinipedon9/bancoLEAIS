@@ -1,6 +1,8 @@
 package BancoLeais.service;
 
 import BancoLeais.model.Usuario;
+import BancoLeais.repository.BancoDados;
+
 public class CriarUsuario {
 
 
@@ -12,6 +14,10 @@ public class CriarUsuario {
         var email = CadastrarDadosPessoais.getEmail();
         var senha = CriarSenha.criarSenha();
 
+        var cpfInvalido = BancoDados.validarCpf(cpf);
+        if (cpfInvalido) {
+            return null;
+        }
         return new Usuario(nome, cpf, numero, email, senha);
     }
 }

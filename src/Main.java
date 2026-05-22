@@ -1,5 +1,6 @@
 import BancoLeais.model.Conta;
 import BancoLeais.model.Usuario;
+import BancoLeais.repository.BancoDados;
 import BancoLeais.service.CriadorDeContas;
 import BancoLeais.service.CriarUsuario;
 import BancoLeais.view.GUI;
@@ -13,13 +14,21 @@ public class Main{
         //Entrada do sistema
         while (true) {
             GUI.cabecalho();
-            int OpComando = GUI.menu();
+            int opComando = GUI.menu();
 
-            if (OpComando == 1) {
+            if (opComando == 1) {
                 Usuario user = CriarUsuario.criarUser();
                 Conta conta = CriadorDeContas.criarConta(user);
+                if (user != null) {
+                    BancoDados.cadastrarConta(conta);
+                } else {
+                    System.out.println("Usuário Já cadastrado");
+                }
             }
-            else if (OpComando == 5) {
+            if (opComando == 2) {
+                BancoDados.listarContas();
+            }
+            if (opComando == 5) {
                 break;
             }
         }
